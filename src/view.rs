@@ -78,7 +78,7 @@ impl View for Help {
     }
     fn render(&self, _: &Bk) -> Vec<String> {
         let text = r#"
-                   Esc q  Quit
+                       q  Quit
                       Fn  Help
                      Tab  Table of Contents
                        i  Progress and Metadata
@@ -276,7 +276,7 @@ impl View for Page {
     }
     fn on_key(&self, bk: &mut Bk, kc: KeyCode) {
         match kc {
-            Esc | Char('q') => bk.quit = true,
+            Char('q') => bk.quit = true,
             Tab => {
                 bk.mark('\'');
                 bk.save_jump();
